@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+
+spring:
+  security:
+      user:
+        name: yuntian
+        password: 944610721
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 3
+    timeout: 3600
+    jedis:
+         pool:
+           max-active: 8
+           max-wait : -1
+           max-idle: 8
+           min-idle: 0
+
+  data:
+   mongodb:
+     database: test
+     host: 127.0.0.1
+     port: 27017
+
+logging:
+      level:
+         org.springframework.data.mongodb.core.MongoTemplate: DEBUG #配置MongoTemplate日志
+
+
+
+
+

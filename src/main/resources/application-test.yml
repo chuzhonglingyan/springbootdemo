@@ -2,31 +2,15 @@ server:
   port: 8088
 
 
+
+###ThymeLeaf配置
 spring:
-  security:
-      user:
-        name: yuntian
-        password: 944610721
-
-  redis:
-    host: 192.168.64.201
-    port: 6379
-    password: 12356
-    database: 3
-    timeout: 3600
-    jedis:
-      pool:
-        max-active: 8
-        max-wait: -1
-        max-idle: 8
-        min-idle: 0
-
-  data:
-    mongodb:
-      database: test
-      host: 192.168.64.201
-      port: 27017
-
-logging:
-  level:
-    org.springframework.data.mongodb.core.MongoTemplate: DEBUG #配置MongoTemplate日志
+  thymeleaf:
+    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    mode: HTML
+    #编码 可不用配置
+    encoding: UTF-8
+    #开发配置为false,避免修改模板还要重启服务器
+    cache: true
+    #配置模板路径，默认是templates，可以不用配置
+    prefix: classpath:/templates/

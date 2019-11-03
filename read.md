@@ -9,7 +9,7 @@
     //当你是host模式的时候，主机会自动把他上面的端口分配给容器，这个时候使用-p或者-P是无用的。但是还是可以在Dockerfile中声明EXPOSE端口
     docker run -d --net="host" -p 8088:8080 --name springbootdemo  yuntian/springbootdemo
     
-    
+      docker exec -it springbootdemo bash
 ### 测试访问
  
     docker exec -t springbootdemo curl -L http://localhost:8088

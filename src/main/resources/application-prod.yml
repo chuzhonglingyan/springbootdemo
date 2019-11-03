@@ -11,3 +11,12 @@ spring:
     cache: true
     #配置模板路径，默认是templates，可以不用配置
     prefix: classpath:/templates/
+
+# slf4j日志配置
+logging:
+  # 配置级别
+  level:
+    #分包配置级别，即不同的目录下可以使用不同的级别  error、warn、info、debug、trace、all
+    root: INFO
+  file:
+    name: /app/logs

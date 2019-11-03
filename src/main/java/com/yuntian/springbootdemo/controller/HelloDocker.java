@@ -11,7 +11,7 @@ public class HelloDocker {
 
     @RequestMapping("/docker")
     public String dockerHello() {
-        return "Hello Docker World.";
+        return "Hello Docker World 哈哈.";
     }
 
 }

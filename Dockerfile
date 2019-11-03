@@ -1,14 +1,11 @@
-# Docker image for springboot file run
-# VERSION 0.0.1
-# Author: yuntian
-# 基础镜像使用java
-FROM kdvolder/jdk8
-# 作者
+FROM tomcat:latest
+#维护者
 MAINTAINER yuntian <944610721@qq.com>
+RUN echo "Asia/Shanghai" > /etc/timezone
+#将target下的xx.war拷贝到/usr/local/tomcat/webapps/下
+ADD /target/springbootdemo-0.0.1-SNAPSHOT.war  /usr/local/tomcat/webapps/
+#设置启动命令
+ENTRYPOINT ["/usr/local/tomcat/bin/catalina.sh","run"]
 
-RUN mkdir /app
-RUN mkdir /app/logs
-ADD target/springbootdemo-0.0.1-SNAPSHOT.jar /app/app.jar
-RUN bash -c 'touch /app/app.jar'
-WORKDIR /app
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","app.jar"]
+
+
